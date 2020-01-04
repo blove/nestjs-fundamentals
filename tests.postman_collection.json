@@ -1,0 +1,42 @@
+{
+	"info": {
+		"_postman_id": "ad281de4-606a-4a93-908d-612877a9435b",
+		"name": "NestJS Fundamentals",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "01-Hello-World",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f1acbee3-f00b-4a93-af64-ca5809d5abf6",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
