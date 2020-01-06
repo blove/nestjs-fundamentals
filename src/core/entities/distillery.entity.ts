@@ -1,7 +1,6 @@
 import { InMemoryDBEntity } from '@nestjs-addons/in-memory-db';
 
-interface DistilleryEntity extends InMemoryDBEntity {
-  id: number;
+export interface DistilleryEntity extends InMemoryDBEntity {
   name: string;
   region: number;
   country: string;

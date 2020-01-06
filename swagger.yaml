@@ -10,6 +10,10 @@ tags:
   description: "Operations about user"
 - name: "scotch"
   description: "Operations about scotch"
+- name: "distillery"
+  description: "Operations about distilleries"
+- name: "region"
+  description: "Operations about regions"
 schemes:
 - "https"
 - "http"
@@ -99,6 +103,176 @@ paths:
           description: "Invalid scotch id"
         404:
           description: "Scotch not found"
+  /distillery:
+    post:
+      tags:
+      - "distillery"
+      summary: "Create a distillery"
+      operationId: "createDistillery"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Created distillery object"
+        required: true
+        schema:
+          $ref: "#/definitions/Distillery"
+      responses:
+        default:
+          description: "successful operation"
+  /distillery/{id}:
+    get:
+      tags:
+      - "distillery"
+      summary: "Get distillery by id"
+      description: ""
+      operationId: "getDistilleryById"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "number"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Distillery"
+        400:
+          description: "Invalid distillery id"
+        404:
+          description: "distillery not found"
+    put:
+      tags:
+      - "distillery"
+      summary: "Updated distillery"
+      operationId: "updateDistilleryById"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "number"
+      - in: "body"
+        name: "body"
+        description: "Updated distillery object"
+        required: true
+        schema:
+          $ref: "#/definitions/Distillery"
+      responses:
+        400:
+          description: "Invalid distillery id"
+        404:
+          description: "distillery not found"
+    delete:
+      tags:
+      - "distillery"
+      summary: "Delete distillery"
+      operationId: "deleteDistilleryById"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "number"
+      responses:
+        400:
+          description: "Invalid distillery id"
+        404:
+          description: "distillery not found"
+  /region:
+    post:
+      tags:
+      - "region"
+      summary: "Create a region"
+      operationId: "createRegion"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Created region object"
+        required: true
+        schema:
+          $ref: "#/definitions/Region"
+      responses:
+        default:
+          description: "successful operation"
+  /region/{id}:
+    get:
+      tags:
+      - "region"
+      summary: "Get region by id"
+      description: ""
+      operationId: "getRegionById"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "number"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Region"
+        400:
+          description: "Invalid region id"
+        404:
+          description: "region not found"
+    put:
+      tags:
+      - "region"
+      summary: "Updated region"
+      operationId: "updateRegionById"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "number"
+      - in: "body"
+        name: "body"
+        description: "Updated region object"
+        required: true
+        schema:
+          $ref: "#/definitions/Region"
+      responses:
+        400:
+          description: "Invalid region id"
+        404:
+          description: "region not found"
+    delete:
+      tags:
+      - "region"
+      summary: "Delete region"
+      operationId: "deleteRegionById"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "number"
+      responses:
+        400:
+          description: "Invalid region id"
+        404:
+          description: "region not found"
   /user:
     post:
       tags:

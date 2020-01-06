@@ -1,42 +1,210 @@
 {
 	"info": {
-		"_postman_id": "ad281de4-606a-4a93-908d-612877a9435b",
+		"_postman_id": "d15fb8f8-59ee-47fe-ac2b-8cefa5ec58f2",
 		"name": "NestJS Fundamentals",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "01-Hello-World",
+			"name": "distillery",
+			"item": [
+				{
+					"name": "createDistillery",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Test Distillary\",\n\t\"region\": 1,\n\t\"country\": \"USA\",\n\t\"city\": \"Denver\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/api/distillery",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"api",
+								"distillery"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}/api/distillery",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"api",
+								"distillery"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getDistilleryById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}/api/distillery/1",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"api",
+								"distillery",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateDistilleryById",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Test Distillary Updated\",\n\t\"region\": 1,\n\t\"country\": \"USA\",\n\t\"city\": \"Denver\",\n\t\"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/api/distillery/1",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"api",
+								"distillery",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteDistilleryById Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}/api/distillery/1",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"api",
+								"distillery",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
 			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "b32df091-c986-48c2-aeb7-5421cc715092",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
 				{
 					"listen": "test",
 					"script": {
-						"id": "f1acbee3-f00b-4a93-af64-ca5809d5abf6",
+						"id": "4c88698e-ee5c-4028-a63d-fd36ab75c088",
+						"type": "text/javascript",
 						"exec": [
-							"pm.test(\"Status code is 200\", function () {",
-							"    pm.response.to.have.status(200);",
-							"});"
-						],
-						"type": "text/javascript"
+							""
+						]
 					}
 				}
 			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "hello-world",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/",
-					"protocol": "http",
+					"raw": "{{base-url}}/api",
 					"host": [
-						"localhost"
+						"{{base-url}}"
 					],
-					"port": "3000",
 					"path": [
-						""
+						"api"
 					]
 				}
 			},
 			"response": []
 		}
-	]
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "a470f512-a572-4d2b-8615-81dabc0fb885",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "0280479b-39ac-42da-8e84-2e8d9a8b7462",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "0397e24b-937a-4a42-ba47-749630bcf6e8",
+			"key": "base-url",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
 }
